@@ -1,1 +1,1 @@
-# d8cards
+Implementing exercise of D8 cards ( https://www.d8cards.com ).

@@ -1,0 +1,5 @@
+name: D8 card
+type: module
+description: D8 card exercise implementation.
+core: 8.x
+package: Custom

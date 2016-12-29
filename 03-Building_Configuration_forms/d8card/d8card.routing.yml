@@ -1,0 +1,10 @@
+d8card.config_form:
+  path: '/d8card/config'
+  defaults:
+    _form: '\Drupal\d8card\Form\ConfigForm'
+    _title: 'D8card Configs'
+  requirements:
+    _permission: 'access d8card configs'
+  options:
+    _admin_route: TRUE
+

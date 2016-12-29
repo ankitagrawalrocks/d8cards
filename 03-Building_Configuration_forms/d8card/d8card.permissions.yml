@@ -1,0 +1,4 @@
+access d8card configs:
+  title: 'Access D8 configs'
+  description: 'Access D8 configurations'
+  restrict access: TRUE

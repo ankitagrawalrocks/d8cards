@@ -1,0 +1,52 @@
+id: movies
+label: Movies
+source:
+  plugin: csv
+  path: public://migration_source/movies.csv
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      title: Movie title
+    2:
+      plot: Plot
+    3:
+      actors: Actors
+    4:
+      genre: Genre
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: movie
+  title: title
+  body:
+    plugin: remove_the
+    source: plot
+  field_actors:
+    -
+      plugin: explode
+      source: actors
+      delimiter: ','
+    -
+      plugin: migration
+      migration: actors
+  field_genre:
+    -
+      plugin: explode
+      source: genre
+      delimiter: '|'
+    -
+      plugin: callback
+      callable: trim
+    -
+      plugin: migration
+      migration: genres
+migration_dependencies:
+  required:
+    - actors
+    - genres

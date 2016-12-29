@@ -1,0 +1,20 @@
+id: actors
+label: Actors
+source:
+  plugin: csv
+  path: public://migration_source/actors.csv
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      name: Full name
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: actors
+  title: name

@@ -1,0 +1,18 @@
+id: genres
+label: Genres
+source:
+  plugin: genres
+  path: public://migration_source/movies.csv
+  header_row_count: 1
+  keys:
+    - genre
+  column_names:
+    4:
+      genre: Genre
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+    plugin: default_value
+    default_value: genres
+  name: genre

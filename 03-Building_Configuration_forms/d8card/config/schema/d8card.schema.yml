@@ -1,0 +1,13 @@
+d8card.config:
+  type: config_object
+  label: 'D8 configs'
+  mapping:
+    text:
+      type: text
+      label: 'Text'
+    select:
+      type: text
+      label: 'Select'
+    radio:
+      type: text
+      label: 'Radio'

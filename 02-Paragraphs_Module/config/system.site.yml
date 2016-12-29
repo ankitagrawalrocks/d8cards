@@ -1,0 +1,14 @@
+uuid: 683aecbc-a89f-4cd5-b68c-cfb2582cf1dd
+name: Drupal8
+mail: ankit4y@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

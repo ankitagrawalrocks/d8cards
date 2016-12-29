@@ -1,0 +1,22 @@
+uuid: a3ac9dce-7ad2-4927-a23b-bd9ec38fa652
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.book
+  module:
+    - text
+id: node.book.body
+field_name: body
+entity_type: node
+bundle: book
+label: USBN
+description: 'International Standard Book Number (ISBN) is a unique numeric commercial book identifier.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,7 @@
+d8card.config_form:
+  title: 'D8 Card 3 excercise - Configuration form'
+  route_name: d8card.config_form
+  description: 'Configuration form created as per Card 3 of D8 cards exercise'
+  parent: system.admin_config_system
+  weight: 10
+

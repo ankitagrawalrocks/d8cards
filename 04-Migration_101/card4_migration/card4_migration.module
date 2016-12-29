@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Card 4 exercise of D8 cards.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function card4_migration_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Help for the card4_migration module.
+    case 'help.page.card4_migration':
+      $output = '<h2>' . t('Card 4 of D8 cards') . '</h2>';
+      $output .= '<p>' . t('Migration of nodes and terms from csv to Drupal 8 as per card 4 of D8 card.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

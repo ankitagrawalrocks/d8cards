@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * D8 cards excercise implementation.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function d8card_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Help for the d8card module.
+    case 'help.page.d8card':
+      $output = '<h2>' . t('D8 cards exercise implementation') . '</h2>';
+      $output .= '<p>' . t('Contains the implementation of exerices of D8 cards') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,5 @@
+name: Card 5 Block system
+type: module
+description: Card 5 of D8 cards for implementing the updation of blocks through custom code.
+core: 8.x
+package: Custom

@@ -1,0 +1,5 @@
+name: Card 9 Attaching Assets
+type: module
+description: Card 9 of D8 cards to attach assests JS and CSS via custom module.
+package: Custom
+core: 8.x

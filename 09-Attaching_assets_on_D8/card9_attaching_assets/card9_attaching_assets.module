@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Card 9 of D8 cards, Attaching assests like JS and CSS via module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function card9_attaching_assets_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Card 9 of D8 cards for attaching JS and CSS via module.
+    case 'help.page.card9_attaching':
+      $output = '<h2>' . t('Card 9 - Attaching assests') . '</h2>';
+      $output .= '<p>' . t('Card 9 of D8 cards, Attaching assests like JS and CSS via module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function card9_attaching_assets_element_info_alter(array &$types) {
+  if (isset($types['table'])) {
+    $types['table']['#attached']['library'][] = 'card9_attaching_assets/card9';
+  }
+}

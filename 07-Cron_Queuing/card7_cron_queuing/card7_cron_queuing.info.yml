@@ -1,0 +1,5 @@
+name: Card 7 Cron Queuing
+type: module
+description: Card 7 of D8 cards, Cron Queuing, Sends a welcome email to registered users.
+core: 8.x
+package: Custom

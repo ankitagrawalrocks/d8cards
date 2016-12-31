@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Card 5 of D8 cards for implementing the updation of blocks through custom code.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function card5_block_system_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Help for card 5 of D8 cards, block update via custom code.
+    case 'help.page.card5_block_system':
+      $output = '<h2>' . t('Card 5 - Block system') . '</h2>';
+      $output .= '<p>' . t('Updation of blocks through custom code as per card 5 of D8 card.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function card5_block_system_cron() {
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('card5_block_system');
+
+  // Do not fill the queue while there are still unprocessed items.
+  if (!$queue->numberOfItems()) {
+    /** @var EntityStorageInterface $storage */
+    $storage = \Drupal::service('entity.manager')->getStorage('block_content');
+
+    $ids = array_keys($storage->loadByProperties(['type' => 'stock_exchange_rate_card']));
+    foreach ($ids as $id) {
+      $queue->createItem($id);
+    }
+  }
+}

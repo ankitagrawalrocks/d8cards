@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Card 7 of D8 cards, Cron Queuing, Sends a welcome email to registered users.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_help().
+ */
+function card7_cron_queuing_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Card 7 of D8 cards for cron queuing.
+    case 'help.page.card7_cron_queuing':
+      $output = '<h2>' . t('Card 7 - Cron Queuing') . '</h2>';
+      $output .= '<p>' . t('Card 7 of D8 cards, Cron Queuing, Sends a welcome email to registered users.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function card7_cron_queuing_user_insert(UserInterface $user) {
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('card7_cron_queuing');
+
+  $queue->createItem($user->id());
+}
+
+/**
+ * Implements hook_mail().
+ */
+function card7_cron_queuing_mail($key, &$message, $params) {
+  $variables = [
+    '@site-name' => \Drupal::config('system.site')->get('name'),
+    '@username' => $params['account']->getDisplayName(),
+  ];
+  $language = \Drupal::languageManager()->getLanguage($message['langcode']);
+  $options = ['langcode' => $language->getId()];
+
+  $message['subject'] .= t('Welcome to @site-name', $variables, $options);
+  $message['body'][] = t('Hello @username,', $variables, $options);
+  $message['body'][] = t('This is the implementation of card 7 of D8 cards - Cron queuing.', $variables, $options);
+  $message['body'][] = t('Mail has been sent from the @site-name site.', $variables, $options);
+}

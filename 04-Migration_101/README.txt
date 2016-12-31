@@ -1,15 +1,15 @@
+Objective:
+At the end of this course, you will be able to  
+  - Import content from MySQL/CSV dump to content types, taxonomies in Drupal.
+
+
+
 Exercise:
 1. Create a movie content type with fields ­ Title (text), Plot(Formatted Text), Actors (Node Reference), Genre(Term Reference).
 
 2. Actors and Genres are simple content type and vocab respectively with no additional fields.
 
 3. Import the CSV dumps from here ( https://drive.google.com/folderview?id=0BzCHjdGh1ZXAdGVudW9ybnBwREU&usp=sharing ) to populate the movie nodes in Drupal using Migrate API.
-
-
-
-Objective:
-At the end of this course, you will be able to  
-  - Import content from MySQL/CSV dump to content types, taxonomies in Drupal.
 
 
 

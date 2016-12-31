@@ -1,3 +1,10 @@
+Objective:
+At the end of this course, you will be able to  
+  - Create paragraph types 
+  - Use paragraphs in content types to display grouped fields appropriately
+
+
+
 Exercise:
 1. Create a Paragraph type ­ “Social Media” with the following fields
   - 1) Embed Code (Text field that accepts any long text and is rendered without any filters (Hint: Create a text format called “Raw”)
@@ -9,13 +16,6 @@ Exercise:
 
 Screengrabs:
 https://www.evernote.com/l/ASmw_AMKx2dFaqaeh3jyTA4icDft3dhvopM 
-
-
-
-Objective:
-At the end of this course, you will be able to  
-  - Create paragraph types 
-  - Use paragraphs in content types to display grouped fields appropriately
 
 
 

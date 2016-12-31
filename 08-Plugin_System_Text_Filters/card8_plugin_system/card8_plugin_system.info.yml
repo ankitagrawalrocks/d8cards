@@ -1,0 +1,5 @@
+name: Card 8 Plugin System
+type: module
+description: Card 8 of D8 cards to auto capitalizes pre-configured words in the filtered text.
+core: 8.x
+package: Custom

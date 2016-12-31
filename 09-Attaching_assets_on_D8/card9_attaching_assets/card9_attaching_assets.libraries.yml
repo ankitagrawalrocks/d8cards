@@ -1,0 +1,17 @@
+card9:
+  version: 1.x
+  css:
+    theme:
+      css/assets.css: {}
+  js:
+    js/assets.js: {}
+  dependencies:
+    - core/jquery
+
+custom:
+  version: 1.x
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
